@@ -14,6 +14,6 @@ CURRENT FEATURES (more will be added in future!):
 - Terminal waypoints to a specific terminal in each phase (eg. 1st term)
 
 COMING SOON:
-Display for Miniboss tracker
+- Display for Miniboss tracker
 
 If anyone uses this and comes across any bugs please dm hideshichan on discord or create an issue :)
