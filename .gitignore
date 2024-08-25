@@ -1,2 +1,2 @@
-*.json
-*.toml
+settings.json
+.data.json

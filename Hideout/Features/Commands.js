@@ -1,4 +1,4 @@
-// just try get it to work lol
+// All / commands
 export function sayCommands() {
   ChatLib.chat('\n&3&lCOMMANDS:')
   ChatLib.chat('&d----------------------------------------------\n')
@@ -18,6 +18,9 @@ export function sayCommands() {
   ChatLib.chat('&d----------------------------------------------')
 }
 
+// Help command
 register('command', () => {
   sayCommands()
 }).setName('hideouthelp').setAliases('hohelp')
+
+// Party Commands
