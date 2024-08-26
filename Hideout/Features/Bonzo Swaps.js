@@ -13,7 +13,7 @@ register("chat", (msg, event) => {
     Client.showTitle(`${RED}SWAP BONZO`, "", 0, 20, 0)
 }).setCriteria(/(^\[BOSS\] Maxor: WELL! WELL! WELL! LOOK WHO'S HERE!$|^\[BOSS\] Storm: I should have known that I stood no chance\.$)/)
 
-//Swap back
+// Swap back
 const SwapBackTriggermsgs = ["[BOSS] Goldor: ....", "[BOSS] Necron: All this, for nothing..."]
 register("chat", (msg, event) => {
     if (!config().SwapBack) return;
