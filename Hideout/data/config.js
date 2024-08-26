@@ -5,16 +5,14 @@ const DefaultConf = new DefaultConfig("Hideout", "data/settings.json")
 
 // General
 .addButton({
+    category: "General",
+    configName: "GithubPage",
     title: "GitHub",
     description: "GitHub page for updating",
-    category: "General",
     subcategory: "",
     placeHolder: "[ Click me! ]",
-    configName: "MyDiscord",
     onClick() {
-        java.awt.Desktop().browse(
-            new java.net.URI("https://github.com/Hideshichan/Hideout/releases")
-        )
+        java.awt.Desktop.getDesktop().browse(new java.net.URI("https://github.com/Hideshichan/Hideout/releases"))
     }
 })
 .addSwitch({
