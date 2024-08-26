@@ -4,6 +4,19 @@ import DefaultConfig from "../../Amaterasu/core/DefaultConfig"
 const DefaultConf = new DefaultConfig("Hideout", "data/settings.json")
 
 // General
+.addButton({
+    title: "GitHub",
+    description: "GitHub page for updating",
+    category: "General",
+    subcategory: "",
+    placeHolder: "[ Click me! ]",
+    configName: "MyDiscord",
+    onClick() {
+        java.awt.Desktop().browse(
+            new java.net.URI("https://github.com/Hideshichan/Hideout/releases")
+        )
+    }
+})
 .addSwitch({
     category: "General",
     configName: "CloakNotifier",
@@ -142,16 +155,6 @@ const DefaultConf = new DefaultConfig("Hideout", "data/settings.json")
     configName: "GFSPearls",
     title: "Auto GFS Pearls",
     description: "Automatically runs /gfs for ender pearls to fill stack",
-    subcategory: "Misc",
-    shouldShow(data) {
-        return data.AutoGFS
-    }
-})
-.addSwitch({
-    category: "Dungeons",
-    configName: "GFSLeaps",
-    title: "Auto GFS Leaps",
-    description: "Automatically runs /gfs for spirit leaps to fill stack",
     subcategory: "Misc",
     shouldShow(data) {
         return data.AutoGFS

@@ -1,4 +1,4 @@
-// All / commands
+// just try get it to work lol
 export function sayCommands() {
   ChatLib.chat('\n&3&lCOMMANDS:')
   ChatLib.chat('&d----------------------------------------------\n')
@@ -8,8 +8,6 @@ export function sayCommands() {
   ChatLib.chat('&d----------------------------------------------\n')
   new Message().addTextComponent(new TextComponent('&6/ep (Aliases: /epearl, /epearls, /pearls)').setClickValue('/ep').setClickAction('run_command')).addTextComponent(new TextComponent('- &aFills stack of pearls\n')).chat()
   ChatLib.chat('&d----------------------------------------------\n')
-  new Message().addTextComponent(new TextComponent('&6/sl (Aliases: /sleap, /sleaps, /leaps)').setClickValue('/sl').setClickAction('run_command')).addTextComponent(new TextComponent('- &aFills stack of leaps\n')).chat()
-  ChatLib.chat('&d----------------------------------------------\n')
   new Message().addTextComponent(new TextComponent('&6/ij (Aliases: /ijerry, /ijerrys, /jerry, /jerrys, /jerries, /ijerries)').setClickValue('/ij').setClickAction('run_command')).addTextComponent(new TextComponent('- &aFills stack of inflatable jerries\n')).chat()
   ChatLib.chat('&d----------------------------------------------\n')
   ChatLib.chat('\n&3&lPARTY COMMANDS:')
@@ -18,9 +16,6 @@ export function sayCommands() {
   ChatLib.chat('&d----------------------------------------------')
 }
 
-// Help command
 register('command', () => {
   sayCommands()
 }).setName('hideouthelp').setAliases('hohelp')
-
-// Party Commands
