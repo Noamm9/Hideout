@@ -22,6 +22,13 @@ const DefaultConf = new DefaultConfig("Hideout", "data/settings.json")
     description: "Sends an alert when wither cloak is toggled on/off",
     subcategory: ""
 })
+.addSwitch({
+    category: "General",
+    configName: "Hideplayers",
+    title: "Hide Players",
+    description: "Hide other players",
+    subcategory: ""
+})
 
 // Rift
 .addSwitch({
