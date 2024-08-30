@@ -3,7 +3,6 @@
 import {
     fullName,
     branding,
-    CloseGame,
     DARK_RED,
     GOLD,
     BOLD,
@@ -42,6 +41,7 @@ register("command", () => UpdateThread.start()).setName(`updateho`)
 const UpdateThread = new Thread(() => {
     try {
         urlToFile("https://github.com/Hideshichan/Hideout/releases/download/Release/Hideout.zip", "config/ChatTriggers/modules/HideoutAutoUpdater.zip", 1000, 2000)
+        ChatLib.chat(branding(`${GREEN}Processing update request, please wait a few seconds`))
         Thread.sleep(5000)
 
         ChatLib.chat(branding(`§r §cOld file deleted:§6 ${FileLib.deleteDirectory("config/ChatTriggers/modules/Hideout")}`))
@@ -52,7 +52,7 @@ const UpdateThread = new Thread(() => {
 
         FileLib.delete("config/ChatTriggers/modules/HideoutAutoUpdater.zip")
         ChatLib.chat(branding(`§r §4[TEMP FILE]§r HideoutAutoUpdater.zip §cDeleted`))
-        new TextComponent(ChatLib.getCenteredText(`§aFinished Updating! §bClick here to run /ct reload.`)).setClickAction("run_command").setClickValue("/ct load").chat()
+        new TextComponent(ChatLib.getCenteredText(`\n§aFinished Updating! §bClick here to run /ct reload.`)).setClickAction("run_command").setClickValue("/ct load").chat()
         
     } catch (e) {branding(`§rError Updating ${fullName}:\n\n§c${e}`)}
 })
