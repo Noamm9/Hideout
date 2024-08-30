@@ -45,16 +45,16 @@ const UpdateThread = new Thread(() => {
         urlToFile("https://github.com/Hideshichan/Hideout/releases/download/Release/Hideout.zip", "config/ChatTriggers/modules/HideoutAutoUpdater.zip", 1000, 2000)
         Thread.sleep(5000)
 
-        ChatLib.chat(`${branding}§r §cDeleted:§6 ${FileLib.deleteDirectory("config/ChatTriggers/modules/Hideout")}`)
+        ChatLib.chat(branding(`§r §cDeleted:§6 ${FileLib.deleteDirectory("config/ChatTriggers/modules/Hideout")}`))
         ChatLib.chat(ChatLib.getCenteredText("§a§a§b§c§d§d§e"))
 
         FileLib.unzip(`config/ChatTriggers/modules/HideoutAutoUpdater.zip`, `config/ChatTriggers/modules`)
-        ChatLib.chat(`${branding}§r §eUnzipping HideoutAutoUpdater.zip`) 
+        ChatLib.chat(branding(`§r §eUnzipping HideoutAutoUpdater.zip`))
         ChatLib.chat(ChatLib.getCenteredText("§a§a§b§c§d§d§e"))
         Thread.sleep(5000)
 
         FileLib.delete("config/ChatTriggers/modules/HideoutAutoUpdater.zip")
-        ChatLib.chat(`${branding}§r §4[TEMP FILE]§r Hideout.zip §cDeleted`)
+        ChatLib.chat(branding(`§r §4[TEMP FILE]§r Hideout.zip §cDeleted`))
         ChatLib.chat(ChatLib.getCenteredText("§a§a§b§c§d§d§e"))
         new TextComponent(ChatLib.getCenteredText(`§aFinished Updating §bClick on this message to §4§lRestart your game.`)).setClickAction("run_command").setClickValue("/closegame").setHover("show_text", `§4§lCloses your game`).chat()
         
@@ -98,7 +98,7 @@ function compareVersions(version1, version2) {
     return false; // Both versions are equal
 }
 
-function updater() { // Big credit to volc (its basically copy pasted but changed to work with more stolen code LMFAO)
+export function updater() { // Big credit to volc (its basically copy pasted but changed to work with more stolen code LMFAO)
     releaseURL = "https://api.github.com/repos/Hideshichan/Hideout/releases"
 
     axios
