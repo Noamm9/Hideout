@@ -105,6 +105,10 @@ export function updater() { // Big credit to volc (its basically copy pasted but
         .get(releaseURL)
         .then((response) =>{
             const release = response.data
+            if (release.length === 0) {
+                console.log("No releases found")
+                return;
+            }
             const latestVersion = release.name.replace("v", "")
             const currentVersion = getCurrentVersion()
             if (compareVersions(currentVersion, latestVersion)) {
