@@ -106,7 +106,7 @@ export function updater() { // Big credit to volc (its basically copy pasted but
         .then((response) =>{
             const release = response.data
             if (release.length === 0) {
-                console.log("No releases found")
+                console.log("No releases found");
                 return;
             }
             const latestVersion = release.name.replace("v", "")
@@ -126,5 +126,4 @@ export function updater() { // Big credit to volc (its basically copy pasted but
                 ChatLib.chat("")
             }
         })
-        .catch((err) => ChatLib.chat(branding + DARK_RED + (err.cause ?? err)));
 }
