@@ -58,7 +58,7 @@ const UpdateThread = new Thread(() => {
         ChatLib.chat(ChatLib.getCenteredText("§a§a§b§c§d§d§e"))
         new TextComponent(ChatLib.getCenteredText(`§aFinished Updating §bClick on this message to §4§lRestart your game.`)).setClickAction("run_command").setClickValue("/closegame").setHover("show_text", `§4§lCloses your game`).chat()
         
-    } catch (e) {branding(`§bError Updating ${fullName}:\n\n§c${e}`)}
+    } catch (e) {branding(`§rError Updating ${fullName}:\n\n§c${e}`)}
 })
 
 /**
