@@ -1,4 +1,6 @@
 // just try get it to work lol
+import { CloseGame } from "../utils/stuff"
+
 export function sayCommands() {
   ChatLib.chat('\n&3&lCOMMANDS:')
   ChatLib.chat('&d----------------------------------------------\n')
@@ -19,3 +21,5 @@ export function sayCommands() {
 register('command', () => {
   sayCommands()
 }).setName('hideouthelp').setAliases('hohelp')
+
+register("command", CloseGame).setName(`closegame`)

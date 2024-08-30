@@ -38,25 +38,21 @@ function urlToFile(url, destination, connecttimeout, readtimeout) {
 }
 
 register("command", () => UpdateThread.start()).setName(`updateho`)
-register("command", CloseGame).setName(`closegame`)
 
 const UpdateThread = new Thread(() => {
     try {
         urlToFile("https://github.com/Hideshichan/Hideout/releases/download/Release/Hideout.zip", "config/ChatTriggers/modules/HideoutAutoUpdater.zip", 1000, 2000)
         Thread.sleep(5000)
 
-        ChatLib.chat(branding(`§r §cDeleted:§6 ${FileLib.deleteDirectory("config/ChatTriggers/modules/Hideout")}`))
-        ChatLib.chat(ChatLib.getCenteredText("§a§a§b§c§d§d§e"))
+        ChatLib.chat(branding(`§r §cOld file deleted:§6 ${FileLib.deleteDirectory("config/ChatTriggers/modules/Hideout")}`))
 
         FileLib.unzip(`config/ChatTriggers/modules/HideoutAutoUpdater.zip`, `config/ChatTriggers/modules`)
         ChatLib.chat(branding(`§r §eUnzipping HideoutAutoUpdater.zip`))
-        ChatLib.chat(ChatLib.getCenteredText("§a§a§b§c§d§d§e"))
         Thread.sleep(5000)
 
         FileLib.delete("config/ChatTriggers/modules/HideoutAutoUpdater.zip")
-        ChatLib.chat(branding(`§r §4[TEMP FILE]§r Hideout.zip §cDeleted`))
-        ChatLib.chat(ChatLib.getCenteredText("§a§a§b§c§d§d§e"))
-        new TextComponent(ChatLib.getCenteredText(`§aFinished Updating §bClick on this message to §4§lRestart your game.`)).setClickAction("run_command").setClickValue("/closegame").setHover("show_text", `§4§lCloses your game`).chat()
+        ChatLib.chat(branding(`§r §4[TEMP FILE]§r HideoutAutoUpdater.zip §cDeleted`))
+        new TextComponent(ChatLib.getCenteredText(`§aFinished Updating! §bClick here to run /ct reload.`)).setClickAction("run_command").setClickValue("/ct load").chat()
         
     } catch (e) {branding(`§rError Updating ${fullName}:\n\n§c${e}`)}
 })
@@ -106,7 +102,7 @@ export function updater() { // Big credit to volc (its basically copy pasted but
         .then((response) =>{
             const release = response.data
             if (release.length === 0) {
-                console.log("No releases found");
+                ChatLib.chat(`You are on the latest version of hideout (${WHITE + BOLD}v${currentVersion + GREEN + BOLD})`);
                 return;
             }
             const latestVersion = release.name.replace("v", "")
