@@ -44,6 +44,13 @@ export const S4_Terminal_Locations_X = [41, 44, 67, 72]
 export const S4_Terminal_Locations_Y = [109, 121, 109, 115]
 export const S4_Terminal_Locations_Z = [29, 29, 29, 47]
 
+export const fullName = "§bHideout"
+
 export function branding(msg) {
     ChatLib.chat("§bHideout §8» §r" + msg)
 }
+
+// Closes your game. Credit to Noamm9
+export function CloseGame() {
+    Client.getMinecraft().func_71400_g()
+  }
