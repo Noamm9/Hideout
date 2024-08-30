@@ -137,6 +137,30 @@ const DefaultConf = new DefaultConfig("Hideout", "data/settings.json")
         return data.TermWaypoints
     }
 })
+.addSwitch({
+    category: "Dungeons",
+    configName: "locationNotif",
+    title: "Location notifications",
+    description: "Shows a title and plays a sound when a party member is at a location (ee, ss)",
+    subcategory: "F7"
+})
+.addSwitch({
+    category: "Dungeons",
+    configName: "hidePlayersInP3",
+    title: "Hide Players in P3",
+    description: "Hides players in terminals",
+    subcategory: "F7"
+})
+addSwitch({
+    category: "Dungeons",
+    configName: "onlyAfterLeaping",
+    title: "Only after leaping?",
+    description: "Only hides (for 2 seconds) after leaping",
+    subcategory: "F7",
+    shouldShow(data) {
+        return data.hidePlayersInP3
+    }
+})
 .addColorPicker({
     category: "Dungeons",
     configName: "TermWaypointsColor",

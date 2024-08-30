@@ -1,3 +1,5 @@
+import config from "../data/config"
+
 register("chat", () =>{
     if (!config().FireFreezeToggle) return;
     new Thread(() => {
