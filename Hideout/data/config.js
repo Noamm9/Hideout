@@ -151,7 +151,7 @@ const DefaultConf = new DefaultConfig("Hideout", "data/settings.json")
     description: "Hides players in terminals",
     subcategory: "F7"
 })
-addSwitch({
+.addSwitch({
     category: "Dungeons",
     configName: "onlyAfterLeaping",
     title: "Only after leaping?",
