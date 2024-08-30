@@ -11,7 +11,7 @@ import {
     GREEN,
     GRAY
 } from "./utils/stuff"
-import axios from "../../Axios"
+import axios from "../Axios"
 
 const File = Java.type("java.io.File")
 const URL = Java.type("java.net.URL")
