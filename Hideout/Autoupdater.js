@@ -3,12 +3,7 @@
 import {
     fullName,
     branding,
-    DARK_RED,
-    GOLD,
-    BOLD,
-    WHITE,
-    GREEN,
-    GRAY
+    GREEN
 } from "./utils/stuff"
 
 const File = Java.type("java.io.File")
@@ -40,17 +35,17 @@ register("command", () => UpdateThread.start()).setName(`updateho`)
 const UpdateThread = new Thread(() => {
     try {
         urlToFile("https://github.com/Hideshichan/Hideout/releases/download/Release/Hideout.zip", "config/ChatTriggers/modules/HideoutAutoUpdater.zip", 1000, 2000)
-        ChatLib.chat(branding(`${GREEN}Processing update request, please wait a few seconds`))
+        branding(`${GREEN}Processing update request, please wait a few seconds`)
         Thread.sleep(5000)
 
-        ChatLib.chat(branding(`§r §cOld file deleted:§6 ${FileLib.deleteDirectory("config/ChatTriggers/modules/Hideout")}`))
+        branding(`§r §cOld file deleted:§6 ${FileLib.deleteDirectory("config/ChatTriggers/modules/Hideout")}`)
 
         FileLib.unzip(`config/ChatTriggers/modules/HideoutAutoUpdater.zip`, `config/ChatTriggers/modules`)
-        ChatLib.chat(branding(`§r §eUnzipping HideoutAutoUpdater.zip`))
+        branding(`§r §eUnzipping HideoutAutoUpdater.zip`)
         Thread.sleep(5000)
 
         FileLib.delete("config/ChatTriggers/modules/HideoutAutoUpdater.zip")
-        ChatLib.chat(branding(`§r §4[TEMP FILE]§r HideoutAutoUpdater.zip §cDeleted`))
+        branding(`§r §4[TEMP FILE]§r HideoutAutoUpdater.zip §cDeleted`)
         new TextComponent(ChatLib.getCenteredText(`\n§aFinished Updating! §bClick here to run /ct reload.`)).setClickAction("run_command").setClickValue("/ct load").chat()
         
     } catch (e) {branding(`§rError Updating ${fullName}:\n\n§c${e}`)}
