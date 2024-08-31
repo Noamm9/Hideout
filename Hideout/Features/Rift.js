@@ -7,6 +7,9 @@ import {
 // Rift pchat message & notification
 register("chat", (event) => {
     if (!config().RiftTimeNotifier) return;
+    World.playSound("note.pling", 2, 1);
+    World.playSound("note.pling", 2, 1);
+    World.playSound("note.pling", 2, 1);
     Client.showTitle(`${BOLD}${RED}10 seconds left!`, "", 5, 50, 5);
     if (!config().RiftTimePchatMsg) return;
     ChatLib.command("pc Being forced out of the rift in 10 seconds.")
