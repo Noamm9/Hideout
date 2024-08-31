@@ -10,8 +10,3 @@ import "./Features/Wish"
 import "./firstload"
 import "./Features/LeapHelper"
 import "./Autoupdater"
-import { updater } from "./Autoupdater"
-
-const checker = register("tick", () => {
-    updater()
-})

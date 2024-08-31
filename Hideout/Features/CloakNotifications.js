@@ -1,8 +1,7 @@
-import config from "../data/config.js"
-
+import config from "../data/config"
 import {
     RED
-} from "../utils/stuff.js"
+} from "../utils/stuff"
 
 //Cloak notifications
 register("chat", (event) => {

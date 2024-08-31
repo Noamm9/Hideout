@@ -137,6 +137,17 @@ const DefaultConf = new DefaultConfig("Hideout", "data/settings.json")
         return data.TermWaypoints
     }
 })
+.addColorPicker({
+    category: "Dungeons",
+    configName: "TermWaypointsColor",
+    title: "Waypoint color",
+    description: "",
+    value: [255, 255, 255, 255],
+    subcategory: "F7",
+    shouldShow(data) {
+        return data.TermWaypoints
+    }
+})
 .addSwitch({
     category: "Dungeons",
     configName: "locationNotif",
@@ -159,17 +170,6 @@ const DefaultConf = new DefaultConfig("Hideout", "data/settings.json")
     subcategory: "F7",
     shouldShow(data) {
         return data.hidePlayersInP3
-    }
-})
-.addColorPicker({
-    category: "Dungeons",
-    configName: "TermWaypointsColor",
-    title: "Waypoint color",
-    description: "",
-    value: [255, 255, 255, 255],
-    subcategory: "F7",
-    shouldShow(data) {
-        return data.TermWaypoints
     }
 })
 .addSwitch({

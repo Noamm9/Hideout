@@ -1,8 +1,8 @@
-import config from "../data/config.js"
+import config from "../data/config"
 import {
     BOLD,
     RED,
-} from "../utils/stuff.js"
+} from "../utils/stuff"
 
 // Wish Message
 register("chat", (event) => {
