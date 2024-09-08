@@ -54,3 +54,16 @@ export function branding(msg) {
 export function CloseGame() {
     Client.getMinecraft().func_71400_g()
   }
+
+/**
+ * Disconnects the client from the server.
+ *
+ * @param {string} [message=""] - The message to be displayed to the player when they are disconnected.
+ * 
+ * Credit to Noamm9 (pro coder that i steal from LMAO)
+ */
+export function DisconnectFromServer(message= "") {
+    Client.getMinecraft().func_147114_u()
+    .func_147298_b().func_150718_a(
+      new ChatComponentText(message))
+  }

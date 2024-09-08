@@ -1,6 +1,8 @@
 // Make sure these go to the right directory 
 import Settings from "../../Amaterasu/core/Settings"
 import DefaultConfig from "../../Amaterasu/core/DefaultConfig"
+import { DisconnectFromServer } from "../utils/stuff"
+
 const DefaultConf = new DefaultConfig("Hideout", "data/settings.json")
 
 // General
@@ -13,6 +15,30 @@ const DefaultConf = new DefaultConfig("Hideout", "data/settings.json")
     placeHolder: "[ Click me! ]",
     onClick() {
         java.awt.Desktop.getDesktop().browse(new java.net.URI("https://github.com/Hideshichan/Hideout/releases"))
+    }
+})
+.addButton({
+    category: "General",
+    configName: "ElEpicTroll",
+    title: "Click if pro gamer",
+    description: "",
+    placeHolder: "[ CLICK HERE! ]",
+    onClick() {
+        Client.currentGui.close()
+        setTimeout(() => DisconnectFromServer(
+        
+            `§cYou are temporarily banned for §r359d 23h 59m 59s §cfrom this server!
+
+            §7Reason:§r Cheating through the use of unfair game game advantages.
+            §7Find out more: §b§nhttps://www.hypixel.net/appeal§r
+
+            §7Ban ID: §r#783A8N7C
+            §7Sharing your Ban ID may affect the proccessing of your appeal!
+
+            (we do a bit of trolling :p)
+            `)
+
+       , 5000)
     }
 })
 .addSwitch({

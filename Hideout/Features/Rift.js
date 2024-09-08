@@ -27,4 +27,4 @@ register("chat", (event) => {
     } else {
         ChatLib.command(`pc Command Failed!`)
     }
-}).setCriteria("!rifttime").setContains();
+}).setCriteria(/Party >( .+)? (\w+): !rifttime/);

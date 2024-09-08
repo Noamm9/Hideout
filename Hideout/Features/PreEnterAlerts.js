@@ -7,12 +7,12 @@ let name
 let action
 let place
 
-registerWhen(register("chat", (n, a, p) => {
+registerWhen(register("chat", (r, n, a, p) => {
     name = n
     action = a
     place = p
     startTime = Date.now()
-}).setCriteria(/Party > .+ (\w+): (At|Inside) (.+)(!)?/), () => config().locationNotif)
+}).setCriteria(/Party >( .+)? (\w+): (At|Inside) (.+)(!)?/), () => config().locationNotif)
 
 registerWhen(register("renderOverlay", () => {
     const remaining = (1500 - (Date.now() - startTime ?? 0))
