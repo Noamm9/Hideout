@@ -45,6 +45,7 @@ export const S4_Terminal_Locations_Y = [109, 121, 109, 115]
 export const S4_Terminal_Locations_Z = [29, 29, 29, 47]
 
 export const fullName = "§bHideout"
+const ChatComponentText = Java.type("net.minecraft.util.ChatComponentText")
 
 export function branding(msg) {
     ChatLib.chat("§bHideout §8» §r" + msg)
