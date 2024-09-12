@@ -22,7 +22,7 @@ const DefaultConf = new DefaultConfig("Hideout", "data/settings.json")
     configName: "ElEpicTroll",
     title: "Click if pro gamer",
     description: "",
-    placeHolder: "[ CLICK HERE! ]",
+    placeHolder: "[ Click me! ]",
     onClick() {
         Client.currentGui.close()
         setTimeout(() => DisconnectFromServer(
@@ -38,7 +38,7 @@ const DefaultConf = new DefaultConfig("Hideout", "data/settings.json")
             (we do a bit of trolling :p)
             `)
 
-       , 5000)
+       , 3000)
     }
 })
 .addSwitch({

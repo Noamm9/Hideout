@@ -7,6 +7,8 @@ let name
 let action
 let place
 
+// Credit to ohful again (modified from it)
+
 registerWhen(register("chat", (r, n, a, p) => {
     name = n
     action = a

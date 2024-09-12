@@ -24,7 +24,8 @@ register("chat", (event) => {
     RiftTime = RiftTime.removeFormatting()
     if (RiftTime.includes("Rift Time Left:")) {
         ChatLib.command(`pc ${RiftTime}`) 
-    } else {
+    }
+    else {
         ChatLib.command(`pc Command Failed!`)
     }
 }).setCriteria(/Party >( .+)? (\w+): !rifttime/);
