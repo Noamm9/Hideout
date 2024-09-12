@@ -1,7 +1,7 @@
 // Make sure these go to the right directory 
 import Settings from "../../Amaterasu/core/Settings"
 import DefaultConfig from "../../Amaterasu/core/DefaultConfig"
-import { DisconnectFromServer } from "../utils/stuff"
+import { DisconnectFromServer, RED } from "../utils/stuff"
 
 const DefaultConf = new DefaultConfig("Hideout", "data/settings.json")
 
@@ -52,7 +52,7 @@ const DefaultConf = new DefaultConfig("Hideout", "data/settings.json")
     category: "General",
     configName: "Hideplayers",
     title: "Hide Players",
-    description: "Hide other players",
+    description: `Hide other players \n${RED}MIGHT NOT WORK`,
     subcategory: ""
 })
 
