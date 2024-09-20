@@ -28,8 +28,8 @@ register("chat", (event) => {
 register("renderWorld", () =>{
     if (!config().TermWaypoints) return;
     if (!in_p3) return;
-    renderBeaconBeam(S1_Terminal_Locations_X[config().WhichTerm], S1_Terminal_Locations_Y[config().WhichTerm], S1_Terminal_Locations_Z[config().WhichTerm], config().TermWaypointsColor.getRed(), config().TermWaypointsColor.getGreen(), config().TermWaypointsColor.getBlue(), 0.8, false, 100)
-    renderBeaconBeam(S2_Terminal_Locations_X[config().WhichTerm], S2_Terminal_Locations_Y[config().WhichTerm], S2_Terminal_Locations_Z[config().WhichTerm], config().TermWaypointsColor.getRed(), config().TermWaypointsColor.getGreen(), config().TermWaypointsColor.getBlue(), 0.8, false, 100)
-    renderBeaconBeam(S3_Terminal_Locations_X[config().WhichTerm], S3_Terminal_Locations_Y[config().WhichTerm], S3_Terminal_Locations_Z[config().WhichTerm], config().TermWaypointsColor.getRed(), config().TermWaypointsColor.getGreen(), config().TermWaypointsColor.getBlue(), 0.8, false, 100)
-    renderBeaconBeam(S4_Terminal_Locations_X[config().WhichTerm], S4_Terminal_Locations_Y[config().WhichTerm], S4_Terminal_Locations_Z[config().WhichTerm], config().TermWaypointsColor.getRed(), config().TermWaypointsColor.getGreen(), config().TermWaypointsColor.getBlue(), 0.8, false, 100)
+    renderBeaconBeam(S1_Terminal_Locations_X[config().WhichTerm], S1_Terminal_Locations_Y[config().WhichTerm], S1_Terminal_Locations_Z[config().WhichTerm], config().TermWaypointsColor[0], config().TermWaypointsColor[1], config().TermWaypointsColor[2], 0.8, false, 100)
+    renderBeaconBeam(S2_Terminal_Locations_X[config().WhichTerm], S2_Terminal_Locations_Y[config().WhichTerm], S2_Terminal_Locations_Z[config().WhichTerm], config().TermWaypointsColor[0], config().TermWaypointsColor[1], config().TermWaypointsColor[2], 0.8, false, 100)
+    renderBeaconBeam(S3_Terminal_Locations_X[config().WhichTerm], S3_Terminal_Locations_Y[config().WhichTerm], S3_Terminal_Locations_Z[config().WhichTerm], config().TermWaypointsColor[0], config().TermWaypointsColor[1], config().TermWaypointsColor[2], 0.8, false, 100)
+    renderBeaconBeam(S4_Terminal_Locations_X[config().WhichTerm], S4_Terminal_Locations_Y[config().WhichTerm], S4_Terminal_Locations_Z[config().WhichTerm], config().TermWaypointsColor[0], config().TermWaypointsColor[1], config().TermWaypointsColor[2], 0.8, false, 100)
 })

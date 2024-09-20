@@ -48,13 +48,13 @@ const DefaultConf = new DefaultConfig("Hideout", "data/settings.json")
     description: "Sends an alert when wither cloak is toggled on/off",
     subcategory: ""
 })
-.addSwitch({
+/*.addSwitch({
     category: "General",
     configName: "Hideplayers",
     title: "Hide Players",
     description: `Hide other players \n${RED}MIGHT NOT WORK`,
     subcategory: ""
-})
+})*/
 
 // Rift
 .addSwitch({
@@ -125,7 +125,7 @@ const DefaultConf = new DefaultConfig("Hideout", "data/settings.json")
     configName: "WhenBonzo",
     title: "When to remind",
     description: "When to remind about putting on a bonzo",
-    options: ["Enter boss","Start of goldor phase"],
+    options: ["Blood finish spawning", "Blood Killed", "Enter boss", "Start of goldor phase"],
     value: 0,
     subcategory: "F7",
     shouldShow(data) {

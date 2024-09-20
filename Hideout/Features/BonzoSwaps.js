@@ -4,14 +4,14 @@ import {
 } from "../utils/stuff"
 
 // Bonzo swap
-const SwapTriggermsgs = ["[BOSS] Maxor: WELL! WELL! WELL! LOOK WHO'S HERE!", "[BOSS] Storm: I should have known that I stood no chance."]
+const SwapTriggermsgs = ["[BOSS] The Watcher: That will be enough for now.", "[BOSS] The Watcher: You have proven yourself. You may pass.", "[BOSS] Maxor: WELL! WELL! WELL! LOOK WHO'S HERE!", "[BOSS] Storm: I should have known that I stood no chance."]
 register("chat", (msg, event) => {
     if (!config().SwapBonzo) return;
     if (msg != SwapTriggermsgs[config().WhenBonzo]) return;
     IsBonzoEquipped = Player.armor.getHelmet().getName().includes("Bonzo's Mask")
     if (IsBonzoEquipped) return;
     Client.showTitle(`${RED}SWAP BONZO`, "", 0, 20, 0)
-}).setCriteria(/(^\[BOSS\] Maxor: WELL! WELL! WELL! LOOK WHO'S HERE!$|^\[BOSS\] Storm: I should have known that I stood no chance\.$)/)
+}).setCriteria(/(^\[BOSS\] The Watcher: That will be enough for now\.$|^\[BOSS\] The Watcher: You have proven yourself\. You may pass\.$|^\[BOSS\] Maxor: WELL! WELL! WELL! LOOK WHO'S HERE!$|^\[BOSS\] Storm: I should have known that I stood no chance\.$)/)
 
 // Swap back
 const SwapBackTriggermsgs = ["[BOSS] Goldor: ....", "[BOSS] Necron: All this, for nothing..."]
