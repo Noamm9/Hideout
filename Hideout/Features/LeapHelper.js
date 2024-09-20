@@ -16,12 +16,12 @@ const EntityPlayer = Java.type("net.minecraft.entity.player.EntityPlayer")
 
 function showPlayers() {
     hide = false
-    ChatLib.chat(`${branding} ${GREEN}}Revealing Players!`)
+    branding(`${RED}Revealing Players!`)
 }
 
 function hidePlayers() {
     hide = true
-    ChatLib.chat(`${branding} ${RED}Hiding Players!`)
+    branding(`${RED}Hiding Players!`)
 }
 
 registerWhen(register("chat", () => {
