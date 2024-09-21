@@ -15,6 +15,7 @@ registerWhen(register("chat", (r, n, a, p) => {
     place = p
     startTime = Date.now()
 }).setCriteria(/Party >( .+)? (\w+): (At|Inside) (.+)(!)?/), () => config().locationNotif)
+// https://regex101.com/r/t6jaUt/1
 
 registerWhen(register("renderOverlay", () => {
     const remaining = (1500 - (Date.now() - startTime ?? 0))
