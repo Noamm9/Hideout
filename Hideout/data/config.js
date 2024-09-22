@@ -129,7 +129,7 @@ const DefaultConf = new DefaultConfig("Hideout", "data/settings.json")
     value: 0,
     subcategory: "F7",
     shouldShow(data) {
-        return data.SwapBonzo
+        return data.SwapMask
     }
 })
 .addDropDown({
@@ -141,7 +141,7 @@ const DefaultConf = new DefaultConfig("Hideout", "data/settings.json")
     value: 0,
     subcategory: "F7",
     shouldShow(data) {
-        return data.SwapBonzo
+        return data.SwapMask
     }
 })
 .addSwitch({
