@@ -3,7 +3,8 @@
 import {
     fullName,
     branding,
-    GREEN
+    GREEN,
+    getModuleVersion
 } from "./utils/stuff"
 
 const File = Java.type("java.io.File")
@@ -38,7 +39,7 @@ const UpdateThread = new Thread(() => {
         branding(`${GREEN}Processing update request, please wait a few seconds`)
         Thread.sleep(5000)
 
-        branding(`§r §cOld file deleted:§6 ${FileLib.deleteDirectory("config/ChatTriggers/modules/Hideout")}`)
+        branding(`§r §cOld file deleted (version: ${getModuleVersion()}):§6 ${FileLib.deleteDirectory("config/ChatTriggers/modules/Hideout")}`)
 
         FileLib.unzip(`config/ChatTriggers/modules/HideoutAutoUpdater.zip`, `config/ChatTriggers/modules`)
         branding(`§r §eUnzipping HideoutAutoUpdater.zip`)
