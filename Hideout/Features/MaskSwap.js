@@ -31,7 +31,7 @@ register("chat", event => {
     const msg = Chatlib.getChatMessage(event).removeFormatting()
     
     if (msg == SwapTriggermsgs[config().WhenMask]) {
-        if (IsBonzoEquipped || IsSpiritEquipped) return
+        if (IsBonzoEquipped() || IsSpiritEquipped()) return
         Client.showTitle(`${RED}SWAP MASK`, "", 0, 20, 0)
         return
     }
@@ -39,7 +39,7 @@ register("chat", event => {
     
     if (config().SwapBack == 0) return;
     if (msg == SwapBackTriggermsgs[config().SwapBack - 1]) {
-        if (!IsBonzoEquipped || !IsSpiritEquipped) return;
+        if (!IsBonzoEquipped() || !IsSpiritEquipped()) return;
         Client.showTitle(`${RED}SWAP BACK HELMET`, "", 0, 20, 0)
     }
 })
