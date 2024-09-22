@@ -115,16 +115,16 @@ const DefaultConf = new DefaultConfig("Hideout", "data/settings.json")
 })
 .addSwitch({
     category: "Dungeons",
-    configName: "SwapBonzo",
-    title: "Bonzo swap reminder",
-    description: "Sends a reminder to put on a bonzo at a chosen point\nWill §cnot §7remind if a bonzo is already on",
+    configName: "SwapMask",
+    title: "Mask swap reminder",
+    description: "Sends a reminder to put on a mask at a chosen point\nWill §cnot §7remind if any mask is already on",
     subcategory: "F7"
 })
 .addDropDown({
     category: "Dungeons",
-    configName: "WhenBonzo",
+    configName: "WhenMask",
     title: "When to remind",
-    description: "When to remind about putting on a bonzo",
+    description: "When to remind about putting on a mask",
     options: ["Blood finish spawning", "Blood Killed", "Enter boss", "Start of goldor phase"],
     value: 0,
     subcategory: "F7",
@@ -148,8 +148,18 @@ const DefaultConf = new DefaultConfig("Hideout", "data/settings.json")
     category: "Dungeons",
     configName: "TermWaypoints",
     title: "Terminal waypoints",
-    description: "Choose what terminal (eg. 1st terminal) to set a waypoint to",
+    description: "Choose what terminal (eg. 1st terminal) to set a waypoint (and tracer) to",
     subcategory: "F7"
+})
+.addSwitch({
+    category: "Dungeons",
+    configName: "TermTracers",
+    title: "Add tracers?",
+    description: "Adds a tracer pointing to the chosen terminal",
+    subcategory: "F7",
+    shouldShow(data) {
+        return data.TermWaypoints
+    }
 })
 .addDropDown({
     category: "Dungeons",

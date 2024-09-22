@@ -1,4 +1,4 @@
-// Credit to Noamm9 from NoammAddons
+// Credit to Noamm9 from NoammAddons-CT
 
 import {
     fullName,

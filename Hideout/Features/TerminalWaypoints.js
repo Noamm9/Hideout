@@ -1,35 +1,63 @@
 import config from "../data/config"
 import renderBeaconBeam from "../../BeaconBeam"
-import {
-    S1_Terminal_Locations_X,
-    S1_Terminal_Locations_Y,
-    S1_Terminal_Locations_Z,
-    S2_Terminal_Locations_X,
-    S2_Terminal_Locations_Y,
-    S2_Terminal_Locations_Z,
-    S3_Terminal_Locations_X,
-    S3_Terminal_Locations_Y,
-    S3_Terminal_Locations_Z,
-    S4_Terminal_Locations_X,
-    S4_Terminal_Locations_Y,
-    S4_Terminal_Locations_Z
-} from "../utils/stuff"
+import { GetP3Section, drawTrace } from "../utils/stuff"
 
 let in_p3 = false
 
-register("chat", (event) => {
-    in_p3 = true
-}).setCriteria("[BOSS] Storm: I should have known that I stood no chance.")
+// Guess who made this code (hint: starts with a N and has worked too hard to help me <3)
 
-register("chat", (event) => {
-    in_p3 = false
-}).setCriteria("The Core entrance is opening!")
+export const Terminal_Locations = {
+    Section1: [
+        [111, 113, 73],
+        [111, 119, 79],
+        [89, 112, 92],
+        [89, 122, 101],
+    ],
+
+    Section2: [
+        [68, 109, 121] ,
+        [59, 120, 121] ,
+        [47, 109, 121] ,
+        [39, 108, 138] ,
+        [40, 124, 122] ,
+    ],
+
+    Section3: [
+        [-3, 109, 112] ,
+        [-3, 109, 93],
+        [20, 123, 93],
+        [-3, 109, 77],
+    ],
+
+    Section4: [
+        [41, 109, 29],
+        [44, 121, 29],
+        [67, 109, 29],
+        [72, 115, 47] 
+    ]
+}
+
+
+register("chat", (event) => in_p3 = true).setCriteria("[BOSS] Storm: I should have known that I stood no chance.")
+register("chat", event => in_p3 = false).setCriteria("The Core entrance is opening!")
+
+function DoStuff(term, color) {
+    const sectiontoload = Terminal_Locations[GetP3Section() - 1]
+    renderBeaconBeam(
+        ...sectiontoload[term], 
+        color[0], color[1], color[2],
+        0.8, false, 100
+    )
+    if (!config().TermTracers) return;
+    drawTrace(
+        ...sectiontoload[term],
+        color[0], color[1], color[2],
+    )
+}
 
 register("renderWorld", () =>{
     if (!config().TermWaypoints) return;
     if (!in_p3) return;
-    renderBeaconBeam(S1_Terminal_Locations_X[config().WhichTerm], S1_Terminal_Locations_Y[config().WhichTerm], S1_Terminal_Locations_Z[config().WhichTerm], config().TermWaypointsColor[0], config().TermWaypointsColor[1], config().TermWaypointsColor[2], 0.8, false, 100)
-    renderBeaconBeam(S2_Terminal_Locations_X[config().WhichTerm], S2_Terminal_Locations_Y[config().WhichTerm], S2_Terminal_Locations_Z[config().WhichTerm], config().TermWaypointsColor[0], config().TermWaypointsColor[1], config().TermWaypointsColor[2], 0.8, false, 100)
-    renderBeaconBeam(S3_Terminal_Locations_X[config().WhichTerm], S3_Terminal_Locations_Y[config().WhichTerm], S3_Terminal_Locations_Z[config().WhichTerm], config().TermWaypointsColor[0], config().TermWaypointsColor[1], config().TermWaypointsColor[2], 0.8, false, 100)
-    renderBeaconBeam(S4_Terminal_Locations_X[config().WhichTerm], S4_Terminal_Locations_Y[config().WhichTerm], S4_Terminal_Locations_Z[config().WhichTerm], config().TermWaypointsColor[0], config().TermWaypointsColor[1], config().TermWaypointsColor[2], 0.8, false, 100)
+
+    DoStuff(config().WhichTerm, config().TermWaypointsColor)
 })

@@ -1,7 +1,6 @@
 import config from "../data/config"
 import {
     branding,
-    GREEN,
     RED
 } from "../utils/stuff"
 import { registerWhen } from "../../BloomCore/utils/Utils"
