@@ -56,7 +56,7 @@ export function CloseGame() {
     Client.getMinecraft().func_71400_g()
 }
 
-export const getModuleVersion = () => JSON.parse(FileLib.read("NoammAddons", "metadata.json")).version
+export const getModuleVersion = () => JSON.parse(FileLib.read("Hideout", "metadata.json")).version
 
 /**
  * Disconnects the client from the server.
