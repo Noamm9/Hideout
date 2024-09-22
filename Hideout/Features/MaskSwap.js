@@ -17,7 +17,7 @@ const SwapBackTriggermsgs = [
     "[BOSS] Necron: All this, for nothing..."
 ]
 
-// const IsBonzoEquipped = {} => Player.armor.getHelmet().getName().includes("Bonzo's Mask")
+// const IsBonzoEquipped = () => Player.armor.getHelmet().getName().includes("Bonzo's Mask")
 // ^^ this is same thing but easier ig (note for myself)
 function IsBonzoEquipped() {
     return Player.armor.getHelmet().getName().includes("Bonzo's Mask")
