@@ -14,8 +14,9 @@ register("chat", (event) => {
 
 // Wish title
 register("RenderTitle", (title, subTitle, event) => {
-    if (subTitle.removeFormatting() !== "⚠ Maxor is enraged! ⚠") return; 
-    cancel(event)
     if (!config().WishAlert) return;
+    if (subTitle.removeFormatting() !== "⚠ Maxor is enraged! ⚠") return; 
+    
+    cancel(event)
     Client.showTitle("", `${BOLD}${RED}WISH`, 5, 50, 5) 
 });
