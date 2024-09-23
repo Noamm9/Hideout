@@ -138,3 +138,22 @@ function isCoordinateInsideBox(coord, corner1, corner2) {
       && coord.y >= min.y && coord.y <= max.y
       && coord.z >= min.z && coord.z <= max.z;
 }
+
+export function getPhase() {
+  if (Dungeon.floorNumber != "7") return
+  const corner1 = { x: -8, y: 254, z: 147 }
+  const corner2 = { x: 134, y: 0, z: -8 }
+  let inPhase = null
+
+  if (IsInDungeon() && MyMath.isCoordinateInsideBox({ x: Player.getX(), y: Player.getY(), z: Player.getZ() }, corner1, corner2)) {
+
+    if (Player.getY() > 210) inPhase = "p1"
+    else if (Player.getY() > 155) inPhase = "p2";
+    else if (Player.getY() > 100) inPhase = "p3";
+    else if (Player.getY() > 45) inPhase = "p4";
+    else inPhase = "p5";
+    
+  }
+
+  return inPhase
+}
