@@ -1,4 +1,5 @@
-// Credit to Noamm9 from NoammAddons-CT
+// @Modified, Credit to Noamm9 from NoammAddons-CT
+// https://github.com/Noamm9/NoammAddons-CT/blob/main/NoammAddons/AutoUpDater.js
 
 import {
     fullName,
