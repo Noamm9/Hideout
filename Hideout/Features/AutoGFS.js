@@ -1,7 +1,6 @@
 import config from "../data/config"
-import {
-    branding
-} from "../utils/stuff"
+import { branding} from "../utils/stuff"
+import { registerWhen } from "../../BloomCore/utils/Utils"
 
 // Credits to LeineV3 for most of the code
 function Pearls() {
@@ -56,24 +55,9 @@ function Jerry() {
     branding(`Gave ${JerrytoGive} Inflatable Jerry to fill stack`)
 }
 
-register("command", () =>{
-    Jerry()
-}).setCommandName("ij").setAliases(["ijerry", "ijerrys", "jerry", "jerrys", "jerries", "ijerries"])
+register("command", Jerry).setCommandName("ij").setAliases(["ijerry", "ijerrys", "jerry", "jerrys", "jerries", "ijerries"])
 
-register("chat", (event) =>{
-    if (!config().AutoGFS) return;
-    if (config().GFSPearls) {
-        Pearls()
-    }
-}).setCriteria("Starting in 3 seconds.")
+registerWhen(register("chat", Pearls).setCriteria("Starting in 3 seconds."), () => config().AutoGFS && config().GFSPearls)
+registerWhen(register("chat", Jerry).setCriteria("Starting in 2 seconds."), () => config().AutoGFS && config().GFSPearls)
 
-register("chat", (event) => {
-    if (!config().AutoGFS) return;
-    if (config().GFSJerry) {
-        Jerry()
-    }
-}).setCriteria("Starting in 2 seconds.")
-
-register("chat", (event) => {
-    cancel(event)
-}).setCriteria(/Inflatable Jerry&r&a from your Sacks to your inventory\.|Ender Pearl&r&a from your Sacks to your inventory\.&r/).setContains()
+registerWhen(register("chat", event => cancel(event)).setCriteria(/Moved .+ (Ender Pearl|Inflatable Jerry) from your Sacks to your inventory\./), () => config().AutoGFS && config().GFSPearls)
