@@ -1,4 +1,4 @@
-import Dungeon from "../BloomCore/dungeons/Dungeon"
+import Dungeon from "../../Bloomcore/dungeons/Dungeon"
 
 //String codes are credits to Volcaronitee
 
@@ -147,7 +147,7 @@ export function getPhase() {
   const corner2 = { x: 134, y: 0, z: -8 }
   let inPhase = null
 
-  if (IsInDungeon() && MyMath.isCoordinateInsideBox({ x: Player.getX(), y: Player.getY(), z: Player.getZ() }, corner1, corner2)) {
+  if (IsInDungeon() && isCoordinateInsideBox({ x: Player.getX(), y: Player.getY(), z: Player.getZ() }, corner1, corner2)) {
 
     if (Player.getY() > 210) inPhase = "p1"
     else if (Player.getY() > 155) inPhase = "p2";
@@ -158,4 +158,8 @@ export function getPhase() {
   }
 
   return inPhase
+}
+
+export function IsInDungeon() {
+  return Dungeon.inDungeon
 }

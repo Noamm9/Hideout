@@ -29,11 +29,6 @@ function Pearls() {
     branding(`Gave ${PearlstoGive} Ender Pearls to fill stack`)
 }
 
-register("command", () =>{
-    Pearls()
-}).setCommandName("ep").setAliases(["epearl", "epearls", "pearls"])
-
-
 function Jerry() {
     const JerryStack = Player.getInventory().getItems().find(a => a?.getName() == "§fInflatable Jerry")
 
@@ -55,9 +50,10 @@ function Jerry() {
     branding(`Gave ${JerrytoGive} Inflatable Jerry to fill stack`)
 }
 
+register("command", Pearls).setCommandName("ep").setAliases(["epearl", "epearls", "pearls"])
 register("command", Jerry).setCommandName("ij").setAliases(["ijerry", "ijerrys", "jerry", "jerrys", "jerries", "ijerries"])
 
 registerWhen(register("chat", Pearls).setCriteria("Starting in 3 seconds."), () => config().AutoGFS && config().GFSPearls)
 registerWhen(register("chat", Jerry).setCriteria("Starting in 2 seconds."), () => config().AutoGFS && config().GFSJerry)
 
-registerWhen(register("chat", event => cancel(event)).setCriteria(/Moved .+ (Ender Pearl|Inflatable Jerry) from your Sacks to your inventory\./), () => config().AutoGFS && (config().GFSPearls || config().GFSJerry))
+registerWhen(register("chat", (event) => { cancel(event) }).setCriteria(/Moved .+ (Ender Pearl|Inflatable Jerry) from your Sacks to your inventory\./), () => config().AutoGFS && (config().GFSPearls || config().GFSJerry))

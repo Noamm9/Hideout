@@ -28,7 +28,7 @@ function IsSpiritEquipped() {
 
 register("chat", event => {
     if (!config().SwapMask) return;
-    const msg = Chatlib.getChatMessage(event).removeFormatting()
+    const msg = ChatLib.getChatMessage(event).removeFormatting()
     
     if (msg == SwapTriggermsgs[config().WhenMask]) {
         if (IsBonzoEquipped() || IsSpiritEquipped()) return
