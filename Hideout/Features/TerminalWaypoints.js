@@ -44,13 +44,15 @@ register("chat", event => in_p3 = false).setCriteria("The Core entrance is openi
 function DoStuff(term, color) {
     const sectiontoload = Terminal_Locations[GetP3Section() - 1]
     renderBeaconBeam(
-        ...sectiontoload[term], 
+        //...sectiontoload[term], 
+        sectiontoload[term][0],sectiontoload[term][1],sectiontoload[term][2],
         color[0], color[1], color[2],
         0.8, false, 100
     )
     if (!config().TermTracers) return;
     drawTrace(
-        ...sectiontoload[term],
+        //...sectiontoload[term],
+        sectiontoload[term][0],sectiontoload[term][1],sectiontoload[term][2],
         color[0], color[1], color[2],
     )
 }
