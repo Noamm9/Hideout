@@ -1,3 +1,5 @@
+import Dungeon from "../BloomCore/dungeons/Dungeon"
+
 //String codes are credits to Volcaronitee
 
 //Color codes
