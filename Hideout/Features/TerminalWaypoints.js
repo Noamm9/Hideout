@@ -109,24 +109,24 @@ register("chat", () => in_p3 = false).setCriteria("The Core entrance is opening!
 
 function DoStuff(term, color) {
     Terminal_Locations.forEach((value, index) => {
-        if (index != GetP3Section - 1) return
-
-        value.forEach((termCoords, termNumber) => {
-            if (termNumber == term) {
-                renderBeaconBeam(
-                    termCoords[0], termCoords[1], termCoords[2],
-                    color[0], color[1], color[2],
-                    0.8, false, 100
-                )
-
-                if (config().TermTracers) {
-                    drawTrace(
+        if (index == GetP3Section() - 1) {
+            value.forEach((termCoords, termNumber) => {
+                if (termNumber == term) {
+                    renderBeaconBeam(
                         termCoords[0], termCoords[1], termCoords[2],
                         color[0], color[1], color[2],
+                        0.8, false, 100
                     )
+    
+                    if (config().TermTracers) {
+                        drawTrace(
+                            termCoords[0], termCoords[1], termCoords[2],
+                            color[0], color[1], color[2],
+                        )
+                    }
                 }
-            }
-        })
+            })
+        }
     })
 }
 
@@ -135,4 +135,8 @@ register("renderWorld", () =>{
     if (!in_p3) return;
 
     DoStuff(config().WhichTerm, config().TermWaypointsColor)
+})
+
+register("worldLoad", () => {
+    in_p3 = false
 })
