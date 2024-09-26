@@ -71,7 +71,7 @@ export function DisconnectFromServer(message= "") {
  * 
  * Again, credits to Noamm9 (my module is gonna be urs at this rate)
  */
-export function drawTrace(x, y, z, r, g, b, a = 1, lineWidth = 3.5) {
+export function drawTrace(x, y, z, r, g, b, a = 255, lineWidth = 3.5) {
   GlStateManager.func_179094_E()
   GL11.glLineWidth(lineWidth)
   GL11.glDisable(GL11.GL_CULL_FACE)

@@ -40,6 +40,7 @@ const Terminal_Locations = [
 
 function DoStuff(term, color) {
     Terminal_Locations.forEach((value, index) => {
+
         if (index != GetP3Section() - 1) return
 
         value.forEach((termCoords, termNumber) => {
@@ -54,10 +55,18 @@ function DoStuff(term, color) {
                     drawTrace(
                         termCoords[0], termCoords[1], termCoords[2],
                         color[0], color[1], color[2],
+                        0.8, false, 100
                     )
+    
+                    if (config().TermTracers) {
+                        drawTrace(
+                            termCoords[0], termCoords[1], termCoords[2],
+                            color[0], color[1], color[2],
+                        )
+                    }
                 }
-            }
-        })
+            })
+        }
     })
 }
 
